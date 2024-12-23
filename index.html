@@ -18,42 +18,17 @@
   <script src="https://kit.fontawesome.com/16ace90703.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header style="background: #135f16bd; height: 20px;"></header>
-  <header class="headerFalse">
-    <li><a href="">Instagram</a></li>
-    <li><a href="">Facebook</a></li>
-    <li><a href="">Teléfono</a></li>
-  </header>
-  <header class="header">
-    <a class="header__logo" href="">
-      <img src="img/logo4-3.png" alt="Logo de Monteperdido">
-    </a>
-    <nav class="header__nav">
-      <ul class="header__ul">
-        <li class="header__item">SOBRE NOSOTROS <i class="fa-solid fa-chevron-down"></i>
-          <ul class="header__subItem">
-            <li><a href="">Manada</a></li>
-            <li><a href="">Tropa</a></li>
-            <li><a href="">Esculta</a></li>
-          </ul>
-        </li>
-        <li class="header__item">
-          <a href="" class="heaeder__link">REDES</a>
-        </li>
-        <li class="header__item">
-          <a href="" class="heaeder__link">PRODUCTOS</a>
-        </li>
-        <li class="header__item">
-          <a href="" class="heaeder__link">CONTACTO</a>
-        </li>
-        <li class="header__item header__item--last">
-          <a href="" class="heaeder__link heaeder__link--last">ÚNETE</a>
-        </li>
-      </ul>
-    </nav>
-    <button class="header__btn">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </header>
+  <script src="js/createBase.js"></script>
+  <script>
+    header__logo.href = '';
+    header__logoImg.src = 'img/logo4-3.png'
+    header__ul.innerHTML = '<li style="cursor: default;" class="header__item">INFORMACIÓN<i class="fa-solid fa-chevron-down"></i><ul class="header__subItem"><li><a href="pages/infos/monteperdido.html">Monteperdido</a></li><li><a href="pages/infos/manada.html">Manada</a></li><li><a href="pages/infos/tropa.html">Tropa</a></li><li><a href="pages/infos/esculta.html">Esculta</a></li></ul></li><li class="header__item"><a href="pages/s="heaeder__link">REDES</a></li><li class="header__item"><a href="pages/s="heaeder__link">PRODUCTOS</a></li><li class="header__item"><a href="pages/contacto.html" class="heaeder__link">CONTACTO</a></li><li class="header__item header__item--last"><a href="pages/s="heaeder__link heaeder__link--last">ÚNETE</a></li>'
+  </script>
+
+  <section class="section_inicio">
+    <h1>Bienvenidos al Grupo Scout Monteperdido 960</h1>
+    <h2>Explora, Aprende, y Lidera: Juntos construimos un mundo mejor desde el movimiento scout.</h2>
+    <div class="section_inicio__sombra"></div>
+  </section>
 </body>
 </html>
