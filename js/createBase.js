@@ -18,9 +18,13 @@ document.body.appendChild(header);
   header__logo.className = 'header__logo';
   header.appendChild(header__logo);
 
-    const header__logoImg = document.createElement('img');
-    header__logoImg.src = '../img/logo4-3.png';
-    header__logo.appendChild(header__logoImg);
+    const header__logoImg1 = document.createElement('img');
+    header__logoImg1.src = '../img/logoASDE.png';
+    header__logo.appendChild(header__logoImg1);
+
+    const header__logoImg2 = document.createElement('img');
+    header__logoImg2.src = '../img/logo4-3.png';
+    header__logo.appendChild(header__logoImg2);
 
   const header__nav = document.createElement('nav');
   header__nav.className = 'header__nav';
