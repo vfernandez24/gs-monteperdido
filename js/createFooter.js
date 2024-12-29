@@ -41,7 +41,13 @@ const footerColumn1 = document.createElement('div');
 
   const footerColumn2 = document.createElement('div');
   footerColumn2.className = 'footerColumn';
-  footerColumn2.innerHTML = 
+  footerColumn2.innerHTML = `
+    <a href="mail"><i class="fa-solid fa-envelope"></i>infomonteperdido@gmail.com</a>
+    <a href="https://instagram.com/gs_monteperdido"><i class="fa-brands fa-instagram"></i>Instagram</a>
+    <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i>Facebook</a>
+    <a href=""><i class="mobile-alt"></i></a>
+    <a href=""><i class="fa-solid fa-location"></i>C/ BLA BLA BLA 5, Parla, Madrid</a>
+  `;
   footer.appendChild(footerColumn2);
 
   const footerColumn3 = document.createElement('div');
