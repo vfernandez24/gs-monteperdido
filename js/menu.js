@@ -1,17 +1,15 @@
 console.log('menu.js conectado');
 
-const nav = document.querySelector('.header_nav');
-const btnMenu = document.querySelector('.header__btn');
-const btnMenuI = btnMenu.querySelector('i');
+const nav = document.querySelector('.header__nav');
 
 function showMenu() {
     nav.classList.add('visible');
-    btnMenuI.classList.toggle('fa-xmark');
-    btnMenuI.classList.toggle('fa-bars');
+    document.body.style.overflowY = 'hidden';
+    overlay.style.display = 'block';
 }
 
 function closeMenu() {
     nav.classList.remove('visible');
-    btnMenuI.classList.toggle('fa-xmark');
-    btnMenuI.classList.toggle('fa-bars');
+    document.body.style.overflowY = 'auto'; 
+    overlay.style.display = 'none';
 }
