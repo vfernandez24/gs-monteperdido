@@ -1,0 +1,29 @@
+'© 2024 Grupo Scout Monteperdido. Todos los derechos reservados'
+
+Header
+
+Section hero
+
+Section informacion:
+.section__titulo == '¿Quiénes somos?'
+p == 'Descripcion del grupo y sus valores'
+img == 'Naturaleza y grupo'
+button == 'Más información'
+
+Section actividades recientes
+.section__titulo
+.section_actividades__container
+    .section_actividades__columna*3
+        titulo
+        mini descripcion
+        imagen
+button == 'Ver más'
+
+Section redes
+.section__titulo == 'COnecta con nosotros'
+
+Section tienda
+.section__titulo == 'Productos Scout'
+Galeria de productos == 'weather'
+
+Footer

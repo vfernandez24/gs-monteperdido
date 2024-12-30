@@ -2,8 +2,7 @@ console.log('createFooter.js conectado');
 
 const footer = document.createElement('footer');
 footer.className = 'footer';
-document.body.appendChild(footer);
-
+body.appendChild(footer);
 
 const footerColumn1 = document.createElement('div');
   footerColumn1.className = 'footerColumn'
@@ -61,3 +60,8 @@ const footerColumn1 = document.createElement('div');
     const footerImg1 = document.createElement('img');
     footerImg1.src = 'img/Logo 4-3.png'; //!! CAMBIAR EN LOS HTML
     footerColumn3.appendChild(footerImg1);
+
+const footer2 = document.createElement('footer');
+footer2.className = 'footer footer--2';
+footer2.textContent = '© 2024 Grupo Scout Monteperdido. Todos los derechos reservados';
+body.appendChild(footer2);
