@@ -15,31 +15,31 @@ const footerColumn1 = document.createElement('div');
     const footerA1 = document.createElement('a');
     footerA1.className = 'footerLink';
     footerA1.href = 'index.html' // CAMBIAR EN LOS HTML
-    footerA1.textContent = 'Inicio';
+    footerA1.innerHTML = '<i class="fa-solid fa-home"></i>Inicio';
     footerColumn1.appendChild(footerA1);
     
     const footerA2 = document.createElement('a');
     footerA2.className = 'footerLink';
     footerA2.href = 'pages/info.html' // CAMBIAR EN LOS HTML
-    footerA2.textContent = 'Información';
+    footerA2.innerHTML = '<i class="fa-solid fa-info"></i>Información';
     footerColumn1.appendChild(footerA2);
 
     const footerA3 = document.createElement('a');
     footerA3.className = 'footerLink';
     footerA3.href = 'pages/redes.html';
-    footerA3.textContent = 'Redes';
+    footerA3.innerHTML = '<i class="fa-solid fa-hashtag"></i>Redes';
     footerColumn1.appendChild(footerA3);
 
     const footerA4 = document.createElement('a');
     footerA4.className = 'footerLink';
     footerA4.href = 'pages/tienda.html';
-    footerA4.textContent = 'Tienda';
+    footerA4.innerHTML = '<i class="fa-solid fa-cart-shopping"></i>Tienda';
     footerColumn1.appendChild(footerA4);
 
     const footerA5 = document.createElement('a');
     footerA5.className = 'footerLink';
     footerA5.href = 'pages/contacto.html';
-    footerA5.textContent = 'Contacto';
+    footerA5.innerHTML = '<i class="fa-solid fa-envelope"></i>Contacto';
     footerColumn1.appendChild(footerA5);
 
   const footerColumn2 = document.createElement('div');
