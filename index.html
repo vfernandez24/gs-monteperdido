@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +14,13 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
   <!-- Icons -->
   <script src="https://kit.fontawesome.com/16ace90703.js" crossorigin="anonymous"></script>
 </head>
+
 <body id="body">
   <script src="js/createBase.js"></script>
   <script>
@@ -37,16 +41,37 @@
     <div class="section_info__container">
       <div class="section_info__div">
         <p>
-          Somos el Grupo Scout Monteperdido, una comunidad dedicada a inspirar y guiar a niños, niñas y jóvenes a través del aprendizaje, la aventura y el compañerismo. Desde 2018, hemos trabajado para inculcar valores como la solidaridad, el liderazgo y el amor por la naturaleza, ayudando a construir un mundo mejor.
+          <span>
+            Somos el Grupo Scout Monteperdido, una comunidad que desde 2018 guía a niños, niñas y jóvenes mediante el
+            aprendizaje,
+            la aventura y el compañerismo. Promovemos valores como la solidaridad, el liderazgo y el amor por la
+            naturaleza para
+            construir un mundo mejor.
+          </span>
+          <span>
+            Guiados por la ley scout, creamos un entorno donde cada miembro crece aprendiendo responsabilidad, respeto y
+            compromiso.
+            Nuestras actividades, como campamentos y proyectos sociales, fortalecen el trabajo en equipo y desarrollan
+            nuevas
+            habilidades.
+          </span>
         </p>
-        <p>
-          Guiados por los valores de la ley scout, promovemos un ambiente donde cada miembro pueda crecer mientras aprende sobre responsabilidad, respeto y compromiso. Desde emocionantes campamentos al aire libre hasta proyectos de impacto social, nuestras actividades están diseñadas para fortalecer el trabajo en equipo, desarrollar nuevas habilidades y crear recuerdos inolvidables.
-        </p>
-        </div>
-        <div class="section_info__div">
-          <img src="img/collageInfo.png" alt="Collage de imágenes de actividades scouts">
+      </div>
+      <div class="section_info__div">
+        <img src="img/collageInfo.png" alt="Collage de imágenes de actividades scouts">
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const textElement = document.querySelector(".section_info__div p");
+        const imageElement = document.querySelector(".section_info__div img");
+
+        if (textElement && imageElement) {
+          const textHeight = textElement.offsetHeight;
+          imageElement.style.maxHeight = `${textHeight}px`;
+        }
+      });
+    </script>
     <a href="pages/info.html" class="section_verMas">Más información</a>
   </section>
 
@@ -55,17 +80,20 @@
     <div class="section_actividades__container">
       <div class="section_actividades__div">
         <h3>CAMPAMENTO DE NAVIDAD</h3>
-        <p>Descripcion de la actvidad 1 Descripcion de la actvidad 1 Descripcion de la actvidad 1 Descripcion de la actvidad 1 Descripcion de la actvidad 1 Descripcion de la actvidad 1</p>
+        <p>Descripcion de la actvidad 1 Descripcion de la actvidad 1 Descripcion de la actvidad 1 Descripcion de la
+          actvidad 1 Descripcion de la actvidad 1 Descripcion de la actvidad 1</p>
         <img src="" alt="">
       </div>
       <div class="section_actividades__div">
         <h3>ACAMPADA DE PASES</h3>
-        <p>Descripcion de la actvidad 2 Descripcion de la actvidad 2 Descripcion de la actvidad 2 Descripcion de la actvidad 2 Descripcion de la actvidad 2 Descripcion de la actvidad 2</p>
+        <p>Descripcion de la actvidad 2 Descripcion de la actvidad 2 Descripcion de la actvidad 2 Descripcion de la
+          actvidad 2 Descripcion de la actvidad 2 Descripcion de la actvidad 2</p>
         <img src="" alt="">
       </div>
       <div class="section_actividades__div">
         <h3>CAMPAMENTO DE VERANO</h3>
-        <p>Descripcion de la actvidad 3 Descripcion de la actvidad 3 Descripcion de la actvidad 3 Descripcion de la actvidad 3 Descripcion de la actvidad 3 Descripcion de la actvidad 3</p>
+        <p>Descripcion de la actvidad 3 Descripcion de la actvidad 3 Descripcion de la actvidad 3 Descripcion de la
+          actvidad 3 Descripcion de la actvidad 3 Descripcion de la actvidad 3</p>
         <img src="" alt="">
       </div>
     </div>
@@ -74,6 +102,19 @@
 
   <section class="section_redes">
     <h2 class="section__titulo">Conecta con nosotros</h2>
+    <div class="section_redes__container">
+      <a href="https://instagram.com/gs_monteperdido" class="section_redes__div">
+        <i class="fab fa-instagram"></i>
+        <p>@gs_monteperdido</p>
+      </a>
+      <a href="" class="section_redes__div">
+        <i class="fab fa-facebook"></i>
+        <p>Grupo Scout Monteperdido 960</p>
+      </a>
+    </div>
+    <p>
+      Síguenos en nuestras redes sociales para estar al tanto de nuestras actividades y eventos.
+    </p>
   </section>
 
   <section class="section_tienda">
@@ -99,10 +140,11 @@
         <img src="" alt="">
         <h3>Producto 4</h3>
         <a href="">Más información</a>
-      </div>      
+      </div>
     </div>
   </section>
 
   <script src="js/createFooter.js"></script>
 </body>
+
 </html>
