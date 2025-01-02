@@ -18,6 +18,13 @@ module.exports = {
       fontFamily: {
         'montserrat': ['Montserrat', 'Open Sans', 'Arial', 'Helvetica', 'sans-serif'],
       },
+      screens: {
+        'xs': '500px',
+        'sm': '700px',
+        'md': '970px',
+        'lg': '1112px',
+        'xl': '1270px',
+      }
     },
   },
   plugins: [],
