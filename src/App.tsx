@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import Index from "./routes/Index";
 import Footer from "./components/Footer";
 import InfoMonteperdido from "./routes/info/InfoMonteperdido";
-import { HashRouter as BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import InfoPage from "./routes/info/InfoPage";
 
 function App() {

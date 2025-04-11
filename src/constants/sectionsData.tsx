@@ -6,7 +6,7 @@ import tropaBg from "../../public/tropaBg.png";
 import brujula from "../../public/compass.png";
 import escultaBg from "../../public/EscultaBg.png";
 import reloj from "../../public/wall-clock.png";
-import kraalBg from "../../public/grupoBg.png";
+import kraalBg from "../../public/kraalBg.png";
 import kraalIcon from "../../public/manos.png";
 
 type valores = {
