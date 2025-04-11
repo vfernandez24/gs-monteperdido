@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3e8341;
+  --color-primary2: #135f16c9;
+  --color-primary3: #82f086;
+  --color-primary4: #1e6620;
+  --color-secondary: #ebaf2d;
+  --color-secondary2: #e28307;
+  --color-secondary3: #ffb049;
+  --color-bg: #fff;
+  --color-bg2: #f4f4f4;
+  --color-text: #353535;
+  --color-hover: #ececec;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3e8e41;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-button {
+  width: 24px;
+  height: 15px;
+}
+
+::-webkit-scrollbar-button:decrement {
+  background: url("/public/scrollUp.svg") no-repeat center;
+  background-size: 24px;
+}
+
+::-webkit-scrollbar-button:increment {
+  background: url("/public/scrollDown.svg") no-repeat center;
+  background-size: 24px;
+}
+
+.section_valores__valor:hover {
+  scale: 1.05;
+}
+
+.section_scouters__moni__img:hover img {
+  scale: 1.02;
+}
