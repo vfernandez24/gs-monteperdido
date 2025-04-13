@@ -62,7 +62,7 @@ function Index({}: Props) {
           </div>
           <div className="section_info__div flex flex-col justify-center items-stretch">
             <img
-              src="/assets/collageInfo.webp"
+              src="/gs-monteperdido/assets/collageInfo.webp"
               alt="Collage de imágenes de actividades scouts"
               className="max-h-[none] object-cover self-stretch rounded-md lg:h-[348px] sm:h-[400px] md:h-[320px] "
             />

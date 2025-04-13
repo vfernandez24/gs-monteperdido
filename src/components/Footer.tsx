@@ -91,9 +91,9 @@ function Footer() {
         <div className="footerColumn3 flex flex-col justify-center self-center gap-5 overflow-hidden max-lg:relative max-lg:left-2/4 max-sm:left-0">
           <img
             className="w-full h-[140px] object-contain"
-            src="/icons/logoASDE.webp"
+            src="/gs-monteperdido/icons/logoASDE.webp"
           />
-          <img className="w-full h-[140px] object-contain" src="/icons/logo4-3.webp" />
+          <img className="w-full h-[140px] object-contain" src="/gs-monteperdido/icons/logo4-3.webp" />
         </div>
       </footer>
       <footer className="footer w-full h-fit grid-cols-[1fr_1fr_1fr] text-bg p-[5%] bg-primary2 z-[12] footer--2 flex justify-center items-center text-[20px] text-center font-normal m-0 max-lg:gap-5 max-lg:px-[10%] max-lg:py-[5%] max-sm:p-[5%]">

@@ -298,7 +298,7 @@ function InfoMonteperdido({}: Props) {
             target="_blank"
           >
             <img
-              src="/assets/Captura-de-pantalla-2025-04-11-161931.webp"
+              src="/gs-monteperdido/assets/Captura-de-pantalla-2025-04-11-161931.webp"
               alt="Mapa del local"
               className="rounded-lg shadow-[4px_4px_15px_#3e8341]"
             />
