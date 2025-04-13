@@ -4,7 +4,7 @@ import { useLocation, Link } from "react-router-dom";
 import images from "../../constants/photosLocation";
 import { sectionsData } from "../../constants/sectionsData";
 
-import grupoBg from "../../../public/grupoBg.png";
+import grupoBg from "/backgrounds/grupoBg.png";
 import ArrowButton from "../../components/ArrowButton";
 import SectionTitle from "../../components/SectionTitle";
 import ImageSection from "../../components/ImageSection";
@@ -48,6 +48,42 @@ const data = {
       fecha: "",
     },
   ],
+  valores: [
+    {
+      icon: "🤝",
+      title: "Abnegación",
+      description: "Ayudar a los demás sin esperar un beneficio",
+    },
+    {
+      icon: "✨",
+      title: "Pureza",
+      description: "Tener pensamientos y acciones sinceras, honestas y limpias",
+    },
+    {
+      icon: "🛡️",
+      title: "Lealtad",
+      description: "Ser fiel a los los principios del escultismo, a la familia y a la patria",
+    },
+  ],
+  leyes: {
+    title: "🟣 Nuestro movimiento, el ",
+    subtitle: <span className="italic font-bold text-purple-700">movimiento Scout ⚜️</span>,
+    content: <>
+      <span>Nuestro movimiento busca hacer del mundo un lugar mejor, educando a la juventud en valores mediante el juego y la naturaleza. A nuestro paso, buscamos siempre dejar el entonrno igual o mejor de lo que nos hemos encontrado, como enseñó el fundador de nuestro movimiento Baden Powell, con la ley scout:</span>
+      <ul>
+        <li className="block font-medium text-lg justify py-2">1️⃣ El scout cifra su honor en ser digno de confianza</li>
+        <li className="block font-medium text-lg justify py-2">2️⃣ El scout es leal</li>
+        <li className="block font-medium text-lg justify py-2">3️⃣ El scout es útil y servicial</li>
+        <li className="block font-medium text-lg justify py-2">4️⃣ El scout es amigo de todos y hermano de cualquier otro scout</li>
+        <li className="block font-medium text-lg justify py-2">5️⃣ El scout es cortés y educado</li>
+        <li className="block font-medium text-lg justify py-2">6️⃣ El scout ve en la naturaleza la obra de Dios</li>
+        <li className="block font-medium text-lg justify py-2">7️⃣ El scout obedece sin réplica y no deja nada a medias</li>
+        <li className="block font-medium text-lg justify py-2">8️⃣ El scout sonríe y canta ante las dificultades</li>
+        <li className="block font-medium text-lg justify py-2">9️⃣ El scout cuida y respeta el bien ajeno</li>
+        <li className="block font-medium text-lg justify py-2">🔟 El scout es limpio en pensamiento, palabra y acción</li>
+      </ul>
+    </>,
+  },
 };
 
 type Props = {};
@@ -170,10 +206,52 @@ function InfoMonteperdido({}: Props) {
                 {sec.h3}
               </h3>
               <p className="italic">{sec.p}</p>
-              <Link to={`/info/${sec.h3}`} className="w-fit mx-auto h-fit flex items-center justify-center absolute bottom-5 font-bold hover:text-secondary3 transition-all duration-300 ease">Más información</Link>
+              <Link
+                to={`/info/${sec.h3}`}
+                className="w-fit mx-auto h-fit flex items-center justify-center absolute bottom-5 font-bold hover:text-secondary3 transition-all duration-300 ease"
+              >
+                Más información
+              </Link>
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="section_valores bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
+        <SectionTitle color={data.color} inner="Nuestras virtudes" />
+        <div className="section_valores__container flex max-w-[80dvw] gap-8 mx-auto mt-8 justify-center flex-wrap pb-10">
+          {data.valores.map((val, index) => (
+            <div
+              className="p-6 h-[196px] w-[362.672px] text-center transition-all duration-300 bg-[#F3F4F6] rounded-lg shadow-md cursor-default section_valores__valor"
+              style={{ boxShadow: `7px 7px 14px ${data.color}` }}
+              key={index}
+            >
+              <div className="mb-4 text-5xl section_valores__valor__icon">
+                {val.icon}
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 section_valores__valor__title">
+                {val.title}
+              </h3>
+              <p className="mt-2 text-gray-600 section_valores__valor__description">
+                {val.description}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="section_valores__ambientacion__container py-12 w-2/3 flex-col flex-1 flex mx-auto h-fit">
+          <div className="section_valores__ambientacion__title py-2 text-2xl font-medium">
+            {data.leyes.title}
+            {data.leyes.subtitle}
+          </div>
+          <div className="section_valores__ambientacion__description p-3 border-l-2 text-lg border-gray-200">
+            {data.leyes.content}
+          </div>
+        </div>
+      </section>
+
+      <section className="section_location">
+        <SectionTitle color={data.color} inner="¿Dónde estamos?" />
+        <div className="section_location__container w-full h-fit justify-center grid grid-cols-[1fr_1fr] px-[15%] gap-10 items-center"></div>
       </section>
 
       <section className="section_fotos">

@@ -29,6 +29,13 @@ function Footer() {
           </Link>
           <Link
             className="w-fit text-xl no-underline font-medium grid grid-cols-[40px_auto] transition-all duration-[0.3s] ease-[ease] hover:text-secondary hover:*:text-secondary items-center "
+            to={"/actividades"}
+          >
+            <i className="text-xl transition-all duration-[0.3s] justify-self-center ease-[ease] mr-2.5 fa-solid fa-campground"></i>
+            <span>Actividades</span>
+          </Link>
+          <Link
+            className="w-fit text-xl no-underline font-medium grid grid-cols-[40px_auto] transition-all duration-[0.3s] ease-[ease] hover:text-secondary hover:*:text-secondary items-center "
             to={"/tienda"}
           >
             <i className="text-xl transition-all duration-[0.3s] justify-self-center ease-[ease] mr-2.5 fa-solid fa-cart-shopping"></i>
@@ -84,9 +91,9 @@ function Footer() {
         <div className="footerColumn3 flex flex-col justify-center self-center gap-5 overflow-hidden max-lg:relative max-lg:left-2/4 max-sm:left-0">
           <img
             className="w-full h-[140px] object-contain"
-            src="/logoASDE.png"
+            src="/icons/logoASDE.png"
           />
-          <img className="w-full h-[140px] object-contain" src="/logo4-3.png" />
+          <img className="w-full h-[140px] object-contain" src="/icons/logo4-3.png" />
         </div>
       </footer>
       <footer className="footer w-full h-fit grid-cols-[1fr_1fr_1fr] text-bg p-[5%] bg-primary2 z-[12] footer--2 flex justify-center items-center text-[20px] text-center font-normal m-0 max-lg:gap-5 max-lg:px-[10%] max-lg:py-[5%] max-sm:p-[5%]">

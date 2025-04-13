@@ -46,11 +46,11 @@ function Header({}: Props) {
           className="header__logo lg:h-[70px] max-lg:h-full flex justify-center gap-5 items-center max-md:h-[60%]"
         >
           <img
-            src="/public/logoASDE.png"
+            src="/icons/logoASDE.png"
             className="xl:h-full max-xl:h-[70%] max-lg:h-full"
           />
           <img
-            src="/public/logo4-3.png"
+            src="/icons/logo4-3.png"
             className="xl:h-full max-xl:h-[70%] max-lg:h-full"
           />
         </Link>

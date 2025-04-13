@@ -29,12 +29,12 @@
 }
 
 ::-webkit-scrollbar-button:decrement {
-  background: url("/public/scrollUp.svg") no-repeat center;
+  background: url("/assets/scrollUp.svg") no-repeat center;
   background-size: 24px;
 }
 
 ::-webkit-scrollbar-button:increment {
-  background: url("/public/scrollDown.svg") no-repeat center;
+  background: url("/assets/scrollDown.svg") no-repeat center;
   background-size: 24px;
 }
 
