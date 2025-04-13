@@ -4,7 +4,7 @@ import { useLocation, Link } from "react-router-dom";
 import images from "../../constants/photosLocation";
 import { sectionsData } from "../../constants/sectionsData";
 
-import grupoBg from "/backgrounds/grupoBg.png";
+import grupoBg from "/backgrounds/grupoBg.webp";
 import ArrowButton from "../../components/ArrowButton";
 import SectionTitle from "../../components/SectionTitle";
 import ImageSection from "../../components/ImageSection";
@@ -62,27 +62,60 @@ const data = {
     {
       icon: "🛡️",
       title: "Lealtad",
-      description: "Ser fiel a los los principios del escultismo, a la familia y a la patria",
+      description:
+        "Ser fiel a los los principios del escultismo, a la familia y a la patria",
     },
   ],
   leyes: {
     title: "🟣 Nuestro movimiento, el ",
-    subtitle: <span className="italic font-bold text-purple-700">movimiento Scout ⚜️</span>,
-    content: <>
-      <span>Nuestro movimiento busca hacer del mundo un lugar mejor, educando a la juventud en valores mediante el juego y la naturaleza. A nuestro paso, buscamos siempre dejar el entonrno igual o mejor de lo que nos hemos encontrado, como enseñó el fundador de nuestro movimiento Baden Powell, con la ley scout:</span>
-      <ul>
-        <li className="block font-medium text-lg justify py-2">1️⃣ El scout cifra su honor en ser digno de confianza</li>
-        <li className="block font-medium text-lg justify py-2">2️⃣ El scout es leal</li>
-        <li className="block font-medium text-lg justify py-2">3️⃣ El scout es útil y servicial</li>
-        <li className="block font-medium text-lg justify py-2">4️⃣ El scout es amigo de todos y hermano de cualquier otro scout</li>
-        <li className="block font-medium text-lg justify py-2">5️⃣ El scout es cortés y educado</li>
-        <li className="block font-medium text-lg justify py-2">6️⃣ El scout ve en la naturaleza la obra de Dios</li>
-        <li className="block font-medium text-lg justify py-2">7️⃣ El scout obedece sin réplica y no deja nada a medias</li>
-        <li className="block font-medium text-lg justify py-2">8️⃣ El scout sonríe y canta ante las dificultades</li>
-        <li className="block font-medium text-lg justify py-2">9️⃣ El scout cuida y respeta el bien ajeno</li>
-        <li className="block font-medium text-lg justify py-2">🔟 El scout es limpio en pensamiento, palabra y acción</li>
-      </ul>
-    </>,
+    subtitle: (
+      <span className="italic font-bold text-purple-700">
+        movimiento Scout ⚜️
+      </span>
+    ),
+    content: (
+      <>
+        <span>
+          Nuestro movimiento busca hacer del mundo un lugar mejor, educando a la
+          juventud en valores mediante el juego y la naturaleza. A nuestro paso,
+          buscamos siempre dejar el entonrno igual o mejor de lo que nos hemos
+          encontrado, como enseñó el fundador de nuestro movimiento Baden
+          Powell, con la ley scout:
+        </span>
+        <ul>
+          <li className="block font-medium text-lg justify py-2">
+            1️⃣ El scout cifra su honor en ser digno de confianza
+          </li>
+          <li className="block font-medium text-lg justify py-2">
+            2️⃣ El scout es leal
+          </li>
+          <li className="block font-medium text-lg justify py-2">
+            3️⃣ El scout es útil y servicial
+          </li>
+          <li className="block font-medium text-lg justify py-2">
+            4️⃣ El scout es amigo de todos y hermano de cualquier otro scout
+          </li>
+          <li className="block font-medium text-lg justify py-2">
+            5️⃣ El scout es cortés y educado
+          </li>
+          <li className="block font-medium text-lg justify py-2">
+            6️⃣ El scout ve en la naturaleza la obra de Dios
+          </li>
+          <li className="block font-medium text-lg justify py-2">
+            7️⃣ El scout obedece sin réplica y no deja nada a medias
+          </li>
+          <li className="block font-medium text-lg justify py-2">
+            8️⃣ El scout sonríe y canta ante las dificultades
+          </li>
+          <li className="block font-medium text-lg justify py-2">
+            9️⃣ El scout cuida y respeta el bien ajeno
+          </li>
+          <li className="block font-medium text-lg justify py-2">
+            🔟 El scout es limpio en pensamiento, palabra y acción
+          </li>
+        </ul>
+      </>
+    ),
   },
 };
 
@@ -113,6 +146,13 @@ function InfoMonteperdido({}: Props) {
     setShowModal(true);
     document.documentElement.style.setProperty("overflow", "hidden");
   };
+
+  const inputClasses = `w-full max-w-[90dvw] block h-10 rounded-[5px] p-3 bg-bg border-[1.5px] border-primary focus:border-primary3 outline-none transition-all ease duration-300`;
+  const [typeInputContact, setTypeInputContact] = useState("");
+  const [noError, setNoError] = useState(false);
+  function submitSolicitud() {
+    setNoError;
+  }
 
   return (
     <>
@@ -217,8 +257,8 @@ function InfoMonteperdido({}: Props) {
         </div>
       </section>
 
-      <section className="section_valores bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
-        <SectionTitle color={data.color} inner="Nuestras virtudes" />
+      <section className="section_valores my-[90px] bg-[radial-gradient(#ebebeb_1px,transparent_1px)] [background-size:16px_16px]">
+        <SectionTitle color="#ebaf2d" inner="Nuestras virtudes" />
         <div className="section_valores__container flex max-w-[80dvw] gap-8 mx-auto mt-8 justify-center flex-wrap pb-10">
           {data.valores.map((val, index) => (
             <div
@@ -249,9 +289,31 @@ function InfoMonteperdido({}: Props) {
         </div>
       </section>
 
-      <section className="section_location">
+      <section className="section_location py-16">
         <SectionTitle color={data.color} inner="¿Dónde estamos?" />
-        <div className="section_location__container w-full h-fit justify-center grid grid-cols-[1fr_1fr] px-[15%] gap-10 items-center"></div>
+        <div className="section_location__container w-full h-[300px] justify-center grid grid-rows-[1fr] grid-cols-[1fr_1fr] px-[15%] gap-10">
+          <a
+            className="cursor-pointer"
+            href="https://www.google.es/maps/place/Plaza+de+Toros/@40.2445196,-3.7590858,18.25z/data=!4m10!1m2!2m1!1splaza+de+toro!3m6!1s0xd41f54c150d66ef:0x1648265fa138a377!8m2!3d40.2441!4d-3.75749!15sCg1wbGF6YSBkZSB0b3JvkgEJdHJhbV9zdG9w4AEA!16s%2Fg%2F1tdm9mwd?hl=es&entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+          >
+            <img
+              src="/assets/Captura-de-pantalla-2025-04-11-161931.webp"
+              alt="Mapa del local"
+              className="rounded-lg shadow-[4px_4px_15px_#3e8341]"
+            />
+          </a>
+          <div className="">
+            <span className="block py-4 text-2xl">
+              <i className="fa-solid text-secondary mr-3 fa-location-dot"></i>
+              Local 10 de la Plaza de Toros, Parla, Madrid
+            </span>
+            <span className="block py-4 text-2xl">
+              <i className="fa-solid text-secondary mr-3 fa-clock"></i>Sábados
+              de 16:30h a 19:00h
+            </span>
+          </div>
+        </div>
       </section>
 
       <section className="section_fotos">
@@ -342,6 +404,94 @@ function InfoMonteperdido({}: Props) {
             <i className="fa-solid fa-chevron-right text-[#3e8341] text-2xl font-medium"></i>
           </button>
         </div>
+      </section>
+
+      <section className="section_unete bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(90,200,100,0.2)_0,rgba(90,200,100,0)_50%,rgba(90,200,100,0)_100%)]">
+        <SectionTitle
+          color={data.color}
+          inner={`¿Quieres unirte a grupo?`}
+        />
+        <form
+          action=""
+          className="lg:w-[600px] max-lg:w-[85%] flex flex-col mx-auto items-center justify-center flex-1"
+          onSubmit={submitSolicitud}
+        >
+          <label className="w-full h-fit text-left py-4" htmlFor="name">
+            Nombre completo del educando:
+            <input type="text" id="name" className={inputClasses} required />
+          </label>
+          <label className="w-full h-fit text-left py-4" htmlFor="anio">
+            Mes y año de nacimiendo del educando:
+            <input type="month" id="anio" className={inputClasses} required />
+          </label>
+          <span className="w-full text-left py-2">
+            Tipo de contacto:
+            <label className="block ml-10 py-1" htmlFor="typeEmail">
+              <input
+                type="radio"
+                value="email"
+                name="typeContact"
+                onChange={(e) => setTypeInputContact(e.target.value)}
+                id="typeEmail"
+              />
+              <span
+                className="ml-4"
+                style={{ fontWeight: typeInputContact === "email" ? 500 : 400 }}
+              >
+                Correo Electrónico
+              </span>
+            </label>
+            <label className="block ml-10 py-1" htmlFor="typeTel">
+              <input
+                type="radio"
+                value="tel"
+                name="typeContact"
+                onChange={(e) => setTypeInputContact(e.target.value)}
+                id="typeTel"
+              />
+              <span
+                className="ml-4"
+                style={{ fontWeight: typeInputContact === "tel" ? 500 : 400 }}
+              >
+                Teléfono
+              </span>
+            </label>
+          </span>
+          {typeInputContact === "email" ? (
+            <label className="w-full h-fit text-left py-4" htmlFor="email">
+              Correo Electrónico:
+              <input
+                type="email"
+                id="email"
+                className={inputClasses}
+                required={typeInputContact === "email" ? true : false}
+              />
+            </label>
+          ) : null}
+          {typeInputContact === "tel" ? (
+            <label className="w-full h-fit text-left py-4" htmlFor="tel">
+              Teléfono:
+              <input
+                type="tel"
+                id="tel"
+                className={inputClasses}
+                required={typeInputContact === "tel" ? true : false}
+              />
+            </label>
+          ) : null}
+          <button
+            type="submit"
+            className="flex items-center justify-center bg-secondary hover:bg-bg transition-all ease duration-300 text-bg hover:text-secondary py-2 px-10 rounded-xl text-lg font-semibold border-2 border-secondary cursor-pointer"
+          >
+            Enviar
+          </button>
+        </form>
+        <p
+          className="items-center justify-center w-full h-fit py-5 text-secondary font-bold text-xl"
+          style={{ opacity: noError == true ? 1 : 0 }}
+        >
+          Solicitud enviada correctamente
+        </p>
       </section>
     </>
   );

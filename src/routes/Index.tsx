@@ -19,7 +19,7 @@ function Index({}: Props) {
 
   return (
     <>
-      <section className="section_inicio min-h-fit pt-[90px] h-[calc(100vh-90px)] relative w-full flex justify-center items-center flex-col max-md:bg-[url('/backgrounds/formacionV.jpeg')] md:bg-[url('/backgrounds/formacionH.jpeg')] bg-cover bg-center bg-fixed">
+      <section className="section_inicio min-h-fit pt-[90px] h-[calc(100vh-90px)] relative w-full flex justify-center items-center flex-col max-md:bg-[url('/backgrounds/formacionV.webp')] md:bg-[url('/backgrounds/formacionH.webp')] bg-cover bg-center bg-fixed">
         <h1 className="text-[50px] text-primary3 font-bold text-center relative z-[2] text-balance max-lg:text-[40px]">
           Bienvenidos al Grupo Scout Monteperdido 960
         </h1>
@@ -62,7 +62,7 @@ function Index({}: Props) {
           </div>
           <div className="section_info__div flex flex-col justify-center items-stretch">
             <img
-              src="/assets/collageInfo.png"
+              src="/assets/collageInfo.webp"
               alt="Collage de imágenes de actividades scouts"
               className="max-h-[none] object-cover self-stretch rounded-md lg:h-[348px] sm:h-[400px] md:h-[320px] "
             />
@@ -102,7 +102,7 @@ function Index({}: Props) {
         </Link>
       </section>
 
-      <section className="section_redes min-h-fit py-[90px] bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
+      <section className="section_redes min-h-fit py-[90px] bg-[radial-gradient(#ebebeb_1px,transparent_1px)] [background-size:16px_16px]">
         <div className="w-full h-fit pb-5 flex justify-center text-5xl items-center text-primary">
           <i className="fa-solid fa-globe"></i>
         </div>
@@ -139,7 +139,7 @@ function Index({}: Props) {
 
       <section className="section_tienda min-h-fit py-[90px]">
         <div className="w-full h-fit pb-5 flex justify-center text-5xl items-center text-primary">
-          <img src="/icons/florDeLis.svg" className="h-[48px]" />
+          <img src="/icons/florDeLis.webp" className="h-[48px]" />
         </div>
         <h2 className="section__titulo after:content-[''] after:w-[150px] font-light tracking-[2px] after:h-2 after:bg-primary after:absolute after:-translate-x-2/4 after:rounded-[10px] uppercase after:left-2/4 after:top-[120%] text-center text-secondary relative text-[30px] mb-[60px]">
           Recuerdos scouts

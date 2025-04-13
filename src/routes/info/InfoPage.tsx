@@ -204,7 +204,13 @@ function InfoPage({
         </div>
       </main>
 
-      <section className="section_valores bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
+      <section
+        className="section_valores"
+        style={{
+          backgroundImage: `radial-gradient(#ebebeb 1px, transparent 1px)`,
+          backgroundSize: "16px 16px",
+        }}
+      >
         <SectionTitle color={data.color} inner="Nuestros valores" />
         <div className="section_valores__container flex max-w-[80dvw] gap-8 mx-auto mt-8 justify-center flex-wrap pb-10">
           {data.valores.map((val, index) => (

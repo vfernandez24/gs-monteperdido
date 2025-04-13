@@ -46,11 +46,11 @@ function Header({}: Props) {
           className="header__logo lg:h-[70px] max-lg:h-full flex justify-center gap-5 items-center max-md:h-[60%]"
         >
           <img
-            src="/icons/logoASDE.png"
+            src="/icons/logoASDE.webp"
             className="xl:h-full max-xl:h-[70%] max-lg:h-full"
           />
           <img
-            src="/icons/logo4-3.png"
+            src="/icons/logo4-3.webp"
             className="xl:h-full max-xl:h-[70%] max-lg:h-full"
           />
         </Link>
@@ -85,7 +85,7 @@ function Header({}: Props) {
             <li className="header__item text-white hover:text-secondary hover:*:text-secondary transition-all duration-[0.3s] ease-[ease] lg:font-bold max-xl:text-[12px] xl:text-[17px] lg:h-full flex items-center relative *:no-underline *:transition-all *:duration-[0.3s] *:ease-[ease] *:text-[color:var(--background)] cursor-default header__item--1 max-lg:w-full max-lg:text-[25px] max-lg:font-semibold max-lg:px-0 max-lg:py-2.5 max-lg:overflow-visible max-lg:h-fit max-lg:flex-col max-lg:items-start max-lg:justify-start max-lg:pl-10">
               <div className="header__navDiv max-lg:flex max-lg:justify-start max-lg:items-center">
                 <i className="fa-solid fa-info mr-0.5 max-lg:absolute max-lg:-translate-y-2/4 max-lg:left-0 max-lg:top-2/4"></i>{" "}
-                INFORMACIÓN <i className="fa-solid fa-chevron-down"></i>
+                INFORMACIÓN <i className="fa-solid fa-chevron-down max-lg:ml-2"></i>
               </div>
               <ul className="header__subItem lg:absolute w-full h-fit max-h-0 overflow-hidden transition-[max-height] duration-[0.3s] ease-[ease-out] left-0 top-[70px] lg:bg-primary2 max-lg:static max-lg:block max-lg:bg-transparent">
                 <Link
@@ -145,6 +145,18 @@ function Header({}: Props) {
               >
                 <i className="fa-solid fa-hashtag mr-0.5 max-lg:absolute max-lg:-translate-y-2/4 max-lg:left-0 max-lg:top-2/4"></i>{" "}
                 REDES
+              </Link>
+            </li>
+            <li className="lg:hidden max-lg:flex header__item text-white hover:text-secondary hover:*:text-secondary cursor-pointer transition-all duration-[0.3s] ease-[ease] lg:font-bold max-xl:text-[12px] xl:text-[17px] lg:h-full items-center relative *:no-underline *:transition-all *:duration-[0.3s] *:ease-[ease] *:text-[color:var(--background)] max-lg:w-full max-lg:justify-start max-lg:h-10 max-lg:text-[25px] max-lg:font-semibold max-lg:px-0 max-lg:py-2.5">
+              <Link
+                onClick={() => {
+                  setMenu(true);
+                }}
+                to="/actividades"
+                className="heaeder__link max-lg:pl-10"
+              >
+                <i className="fa-solid fa-campground mr-0.5 max-lg:absolute max-lg:-translate-y-2/4 max-lg:left-0 max-lg:top-2/4"></i>{" "}
+                ACTIVIDADES
               </Link>
             </li>
             <li className="header__item text-white hover:text-secondary hover:*:text-secondary cursor-pointer transition-all duration-[0.3s] ease-[ease] lg:font-bold max-xl:text-[12px] xl:text-[17px] lg:h-full flex items-center relative *:no-underline *:transition-all *:duration-[0.3s] *:ease-[ease] *:text-[color:var(--background)] max-lg:w-full max-lg:justify-start max-lg:h-10 max-lg:text-[25px] max-lg:font-semibold max-lg:px-0 max-lg:py-2.5">

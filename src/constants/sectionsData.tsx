@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
 
-import manadaBg from "/backgrounds/manadaBg.png";
-import wolf from "/icons/wolf.png";
-import tropaBg from "/backgrounds/tropaBg.png";
-import brujula from "/icons/compass.png";
-import escultaBg from "/backgrounds/EscultaBg.png";
-import reloj from "/icons/wall-clock.png";
-import kraalBg from "/backgrounds/kraalBg.png";
-import kraalIcon from "/icons/manos.png";
+import manadaBg from "/backgrounds/manadaBg.webp";
+import wolf from "/icons/wolf.webp";
+import tropaBg from "/backgrounds/tropaBg.webp";
+import brujula from "/icons/compass.webp";
+import escultaBg from "/backgrounds/escultaBg.webp";
+import reloj from "/icons/wall-clock.webp";
+import kraalBg from "/backgrounds/kraalBg.webp";
+import kraalIcon from "/icons/manos.webp";
 
 type valores = {
   icon: string;
