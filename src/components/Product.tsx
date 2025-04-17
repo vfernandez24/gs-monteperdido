@@ -6,7 +6,7 @@ type Props = {
 
 function Product({ srcImg, subTitle, title }: Props) {
   return (
-    <div className="product w-[380px] max-md:w-[300px] h-[250px] max-md:h-[350px] rounded-2xl shadow-[0_4px_20px_rgba(62,131,65,0.15)] transition-all duration-300 delay-300 ease-out grid grid-cols-[1fr_1.4fr] grid-rows-[1fr] relative hover:shadow-[5px_7px_15px_#3e834186,_-5px_-7px_15px_#ebebeb] max-md:grid-cols-[1fr] max-md:grid-rows-[4fr_6fr] ">
+    <div className="product cursor-default w-[380px] max-md:w-[300px] h-[250px] max-md:h-[350px] rounded-2xl shadow-[0_4px_20px_rgba(62,131,65,0.15)] transition-all duration-300 delay-300 ease-out grid grid-cols-[1fr_1.4fr] grid-rows-[1fr] relative hover:shadow-[5px_7px_15px_#3e834186,_-5px_-7px_15px_#ebebeb] max-md:grid-cols-[1fr] max-md:grid-rows-[4fr_6fr] ">
       <div className="product__div product__div--foto flex items-center justify-center">
         <img
           src={srcImg}

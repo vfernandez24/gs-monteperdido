@@ -88,12 +88,28 @@ export const sectionsData: Record<
         },
       ],
     },
-    valores: [{ description: "", icon: "", title: "" }],
+    valores: [
+      {
+        description: "descripcion 1 descripcion 1 descripcion 1",
+        icon: "1️⃣",
+        title: "valor 1",
+      },
+      {
+        description: "descripcion 2 descripcion 2 descripcion 2",
+        icon: "2️⃣",
+        title: "valor 2",
+      },
+      {
+        description: "descripcion 3 descripcion 3 descripcion 3",
+        icon: "3️⃣",
+        title: "valor 3",
+      },
+    ],
     ambientacion: {
       title: "🟡 Para Manada - ",
       subtitle: <span className="italic">Libro de las Tierras Vírgenes</span>,
       description:
-        "En la Manada nos inspiramos en el Libro de las Tierras Vírgenes, donde cada niño y niña foma parte de una gran familia de lobatos. A través de historias, símbolos y personajes como Akela o Baloo, los pequeños aprenden valores mientras se sumergen en la magia de la selva",
+        "descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion .",
     },
   },
   tropa: {
@@ -136,12 +152,28 @@ export const sectionsData: Record<
         },
       ],
     },
-    valores: [{ description: "", icon: "", title: "" }],
+    valores: [
+      {
+        description: "descripcion 1 descripcion 1 descripcion 1",
+        icon: "1️⃣",
+        title: "valor 1",
+      },
+      {
+        description: "descripcion 2 descripcion 2 descripcion 2",
+        icon: "2️⃣",
+        title: "valor 2",
+      },
+      {
+        description: "descripcion 3 descripcion 3 descripcion 3",
+        icon: "3️⃣",
+        title: "valor 3",
+      },
+    ],
     ambientacion: {
       title: "🟢 Para Tropa - ",
       subtitle: <span className="italic">El escultismo</span>,
       description:
-        "La Tropa sigue la ambientación clásica del escultismo, centrada en la aventura, el compañerismo y el servicio. A través de patrullas, desafíos y salidas al aire libre, los troperos desarrollan autonomía y liderazgo en un entorno inspirado por la tradición scout.",
+        "descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion .",
     },
   },
   esculta: {
@@ -185,35 +217,32 @@ export const sectionsData: Record<
     },
     valores: [
       {
-        description:
-          "bla blab lbalba ba labla lab lalba lalb alb labl albl al ab",
-        icon: "😂",
-        title: "Solidaridad",
+        description: "descripcion 1 descripcion 1 descripcion 1",
+        icon: "1️⃣",
+        title: "valor 1",
       },
       {
-        description:
-          "bla blab lbalba ba labla lab lalba lalb alb labl albl al ab",
-        icon: "😂",
-        title: "Solidaridad",
+        description: "descripcion 2 descripcion 2 descripcion 2",
+        icon: "2️⃣",
+        title: "valor 2",
       },
       {
-        description:
-          "bla blab lbalba ba labla lab lalba lalb alb labl albl al ab",
-        icon: "😂",
-        title: "Solidaridad",
+        description: "descripcion 3 descripcion 3 descripcion 3",
+        icon: "3️⃣",
+        title: "valor 3",
       },
     ],
     ambientacion: {
       title: "🟤 Para Esculta - ",
       subtitle: <span className="italic">Hook (Peter Pan)</span>,
       description:
-        "Inspirados en el universo de Hook, los escultas viven su etapa como una travesía entre islas, estrellas y mapas. El grupo se convierte en una tripulación con rumbo propio, guiada por la imaginación, la responsabilidad y el deseo de dejar huella.",
+        "descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion descripcion ambientacion ",
     },
   },
   kraal: {
     section_hero__title: (
       <>
-        ¡Siempre listos para servir! Conoce a nuestro maravilloso{" "}
+        ¡Siempre listos para servir! Conoce a nuestros maravillosos{" "}
         <span
           className="text-[#D188FF]"
           style={{ textShadow: "0px 0px 40px #C86FFF" }}

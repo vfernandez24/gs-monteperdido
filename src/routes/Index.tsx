@@ -70,7 +70,7 @@ function Index({}: Props) {
         </div>
         <Link
           to="info/monteperdido"
-          className="section_verMas text-center text-xl font-bold no-underline text-secondary2 transition-all duration-[0.3s] ease-[ease] mt-5 hover:text-secondary"
+          className="section_verMas text-center text-xl font-bold no-underline text-secondary2 transition-all duration-[0.3s] ease-[ease] hover:text-secondary flex items-center justify-center w-fit mx-auto h-fit mt-10 relative after:content-[''] after:w-0 after:absolute after:top-full after:left-0 after:h-[3px] after:bg-secondary after:rounded-sm after:transition-all after:duration-300 hover:after:w-full **:transition-all **:duration-300 hover:**:text-secondary"
         >
           Más información
         </Link>
@@ -96,7 +96,7 @@ function Index({}: Props) {
         </div>
         <Link
           to="/actividades"
-          className="section_verMas text-center text-xl font-bold no-underline text-secondary2 transition-all duration-[0.3s] ease-[ease] mt-5 hover:text-secondary"
+          className="section_verMas text-center text-xl font-bold no-underline text-secondary2 transition-all duration-[0.3s] ease-[ease] hover:text-secondary flex items-center justify-center w-fit mx-auto h-fit mt-10 relative after:content-[''] after:w-0 after:absolute after:top-full after:left-0 after:h-[3px] after:bg-secondary after:rounded-sm after:transition-all after:duration-300 hover:after:w-full **:transition-all **:duration-300 hover:**:text-secondary"
         >
           Más actividades
         </Link>
@@ -139,7 +139,10 @@ function Index({}: Props) {
 
       <section className="section_tienda min-h-fit py-[90px]">
         <div className="w-full h-fit pb-5 flex justify-center text-5xl items-center text-primary">
-          <img src="/icons/florDeLis.webp" className="h-[48px]" />
+          <img
+            src="/gs-monteperdido/icons/florDeLis.webp"
+            className="h-[48px]"
+          />
         </div>
         <h2 className="section__titulo after:content-[''] after:w-[150px] font-light tracking-[2px] after:h-2 after:bg-primary after:absolute after:-translate-x-2/4 after:rounded-[10px] uppercase after:left-2/4 after:top-[120%] text-center text-secondary relative text-[30px] mb-[60px]">
           Recuerdos scouts
@@ -156,7 +159,7 @@ function Index({}: Props) {
         </div>
         <Link
           to="/recuerdos"
-          className="section_verMas text-center text-xl font-bold no-underline text-secondary2 transition-all duration-[0.3s] ease-[ease] mt-5 hover:text-secondary flex items-center justify-center w-full h-fit py-10"
+          className="section_verMas text-center text-xl font-bold no-underline text-secondary2 transition-all duration-[0.3s] ease-[ease] hover:text-secondary flex items-center justify-center w-fit mx-auto h-fit mt-10 relative after:content-[''] after:w-0 after:absolute after:top-full after:left-0 after:h-[3px] after:bg-secondary after:rounded-sm after:transition-all after:duration-300 hover:after:w-full **:transition-all **:duration-300 hover:**:text-secondary"
         >
           Más recuerdos
         </Link>

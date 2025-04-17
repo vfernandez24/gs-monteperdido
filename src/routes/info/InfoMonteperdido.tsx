@@ -76,13 +76,13 @@ const data = {
     content: (
       <>
         <span>
-          Nuestro movimiento busca hacer del mundo un lugar mejor, educando a la
+          El escultismo busca hacer del mundo un lugar mejor, educando a la
           juventud en valores mediante el juego y la naturaleza. A nuestro paso,
           buscamos siempre dejar el entonrno igual o mejor de lo que nos hemos
           encontrado, como enseñó el fundador de nuestro movimiento Baden
           Powell, con la ley scout:
         </span>
-        <ul>
+        <ul className="pl-4">
           <li className="block font-medium text-lg justify py-2">
             1️⃣ El scout cifra su honor en ser digno de confianza
           </li>
@@ -248,7 +248,7 @@ function InfoMonteperdido({}: Props) {
               <p className="italic">{sec.p}</p>
               <Link
                 to={`/info/${sec.h3}`}
-                className="w-fit mx-auto h-fit flex items-center justify-center absolute bottom-5 font-bold hover:text-secondary3 transition-all duration-300 ease"
+                className="w-fit mx-auto h-fit flex items-center justify-center absolute bottom-5 font-bold hover:text-hover transition-all duration-300 ease"
               >
                 Más información
               </Link>
@@ -289,7 +289,7 @@ function InfoMonteperdido({}: Props) {
         </div>
       </section>
 
-      <section className="section_location py-16">
+      <section className="section_location">
         <SectionTitle color={data.color} inner="¿Dónde estamos?" />
         <div className="section_location__container w-full h-[300px] justify-center grid grid-rows-[1fr] grid-cols-[1fr_1fr] px-[15%] gap-10">
           <a
