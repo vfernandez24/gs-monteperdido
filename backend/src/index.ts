@@ -3,11 +3,11 @@ import cors from "cors";
 import nodemailer from "nodemailer";
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://vfernandez24.github.io",
     credentials: true,
   })
 );
@@ -41,5 +41,5 @@ app.post("/send-email", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
