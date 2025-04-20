@@ -1,9 +1,15 @@
+import { useEffect } from "react";
 import Product from "../components/cards/Product";
 import products from "../constants/products";
 
 type Props = {};
 
 function Shop({}: Props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = `Recuerdos Scout | GS Monteperdido 960 Parla`;
+  }, [location.pathname]);
+
   return (
     <>
       <section className="section_hero pt-16">

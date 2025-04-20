@@ -5,6 +5,7 @@ import InfoMonteperdido from "./routes/info/InfoMonteperdido";
 import { HashRouter as BrowserRouter, Routes, Route } from "react-router-dom";
 import InfoPage from "./routes/info/InfoPage";
 import Shop from "./routes/Shop";
+import Unete from "./routes/Unete";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           element={<InfoPage seccionName="kraal" />}
         ></Route>
         <Route path="/recuerdos" element={<Shop />}></Route>
+        <Route path="/unete" element={<Unete />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
