@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
+import sendEmail from "../../scripts/sendEmail";
+
 import { Props, sectionsData } from "../../constants/sectionsData";
 
-import SectionTitle from "../../components/SectionTitle";
-import ArrowButton from "../../components/ArrowButton";
+import SectionTitle from "../../components/common/SectionTitle";
+import ArrowButton from "../../components/buttons/ArrowButton";
 import images from "../../constants/photosLocation";
 import ImageSection from "../../components/ImageSection";
 
@@ -44,9 +46,21 @@ function InfoPage({
 
   const inputClasses = `w-full max-w-[90dvw] block h-10 rounded-[5px] p-3 bg-bg border-[1.5px] border-primary focus:border-primary3 outline-none transition-all ease duration-300`;
   const [typeInputContact, setTypeInputContact] = useState("");
-  const [noError, setNoError] = useState(false);
-  function submitSolicitud() {
-    setNoError;
+
+  const [nombre, setNombre] = useState("");
+  const [fecha, setFecha] = useState("");
+  const [email, setEmail] = useState("");
+  const [tel, setTel] = useState("");
+
+  function formSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const fechaSol = new Date().toLocaleString();
+    const emailBody = `Nombre: ${nombre}
+Fecha de nacimiento: ${fecha}
+Fecha de solicitud: ${fechaSol}
+Contacto: ${typeInputContact == "email" ? email : tel}`;
+    const emailSubject = `Solicitud de ingreso a grupo (${fechaSol})`;
+    sendEmail(emailBody, emailSubject);
   }
   return (
     <>
@@ -231,7 +245,7 @@ function InfoPage({
             </div>
           ))}
         </div>
-        <div className="section_valores__ambientacion__container py-12 w-2/3 flex-col flex-1 flex mx-auto h-fit">
+        <div className="section_valores__ambientacion__container py-12 md:w-2/3 max-md:w-[80vw] flex-col flex-1 flex mx-auto h-fit">
           <div className="section_valores__ambientacion__title py-2 text-2xl font-medium">
             {data.ambientacion.title}
             {data.ambientacion.subtitle}
@@ -285,15 +299,30 @@ function InfoPage({
         <form
           action=""
           className="lg:w-[600px] max-lg:w-[85%] flex flex-col mx-auto items-center justify-center flex-1"
-          onSubmit={submitSolicitud}
+          onSubmit={formSubmit}
         >
           <label className="w-full h-fit text-left py-4" htmlFor="name">
             Nombre completo del educando:
-            <input type="text" id="name" className={inputClasses} required />
+            <input
+              onChange={(e) => setNombre(e.target.value)}
+              value={nombre}
+              placeholder="Name"
+              type="text"
+              id="name"
+              className={inputClasses}
+              required
+            />
           </label>
           <label className="w-full h-fit text-left py-4" htmlFor="anio">
             Mes y año de nacimiendo del educando:
-            <input type="month" id="anio" className={inputClasses} required />
+            <input
+              onChange={(e) => setFecha(e.target.value)}
+              value={fecha}
+              type="month"
+              id="anio"
+              className={inputClasses}
+              required
+            />
           </label>
           <span className="w-full text-left py-2">
             Tipo de contacto:
@@ -324,7 +353,7 @@ function InfoPage({
                 className="ml-4"
                 style={{ fontWeight: typeInputContact === "tel" ? 500 : 400 }}
               >
-                Teléfono
+                Usuario de instagram
               </span>
             </label>
           </span>
@@ -332,6 +361,9 @@ function InfoPage({
             <label className="w-full h-fit text-left py-4" htmlFor="email">
               Correo Electrónico:
               <input
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                placeholder="correo@electronico.com"
                 type="email"
                 id="email"
                 className={inputClasses}
@@ -340,12 +372,18 @@ function InfoPage({
             </label>
           ) : null}
           {typeInputContact === "tel" ? (
-            <label className="w-full h-fit text-left py-4" htmlFor="tel">
-              Teléfono:
+            <label
+              className="w-full h-fit text-left py-4 relative before:content-['@'] before:w-5 before:h-10 before:flex before:absolute before:bottom-[18px] before:left-3 before:items-center before:justify-center before:text-black before:text-xl before:z-10"
+              htmlFor="tel"
+            >
+              Usuario de instagram:
               <input
-                type="tel"
+                onChange={(e) => setTel(e.target.value)}
+                value={tel}
+                placeholder="username"
+                type="text"
                 id="tel"
-                className={inputClasses}
+                className={`${inputClasses} pl-10 relative before:content-['@']`}
                 required={typeInputContact === "tel" ? true : false}
               />
             </label>
@@ -357,10 +395,7 @@ function InfoPage({
             Enviar
           </button>
         </form>
-        <p
-          className="items-center justify-center w-full h-fit py-5 text-secondary font-bold text-xl"
-          style={{ opacity: noError == true ? 1 : 0 }}
-        >
+        <p className="items-center justify-center w-full h-fit py-5 text-secondary font-bold text-xl opacity-0">
           Solicitud enviada correctamente
         </p>
       </section>

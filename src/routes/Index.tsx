@@ -1,9 +1,9 @@
 import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import ActivityCard from "../components/ActivityCard";
-import Product from "../components/Product";
-import ArrowButton from "../components/ArrowButton";
+import ActivityCard from "../components/cards/ActivityCard";
+import Product from "../components/cards/Product";
+import ArrowButton from "../components/buttons/ArrowButton";
 
 import products from "../constants/products";
 import activities from "../constants/activities";
@@ -109,11 +109,11 @@ function Index({}: Props) {
         <h2 className="section__titulo after:content-[''] after:w-[150px] font-light tracking-[2px] after:h-2 after:bg-primary after:absolute after:-translate-x-2/4 after:rounded-[10px] uppercase after:left-2/4 after:top-[120%] text-center text-secondary2 relative text-[30px] mb-[60px]">
           Conecta con nosotros
         </h2>
-        <div className="section_redes__container w-full flex justify-center items-center gap-5 px-0 py-[30px] max-md:flex-col max-md:gap-10">
+        <div className="section_redes__container w-full flex justify-center items-center gap-5 px-0 py-[30px] max-lg:flex-col max-lg:gap-10">
           <a
             target="_blank"
             href="https://instagram.com/gs_monteperdido"
-            className="section_redes__div relative after:content-[''] after:w-0 after:absolute after:top-full after:left-0 after:h-1 after:bg-secondary after:rounded-sm after:transition-all after:duration-300 hover:after:w-full no-underline flex items-center gap-2.5 **:transition-all **:duration-300 hover:**:text-secondary2 font-semibold max-md:flex-col"
+            className="section_redes__div relative after:content-[''] after:w-0 after:absolute after:top-full after:left-0 after:h-1 after:bg-secondary after:rounded-sm after:transition-all after:duration-300 hover:after:w-full no-underline flex items-center gap-2.5 **:transition-all **:duration-300 hover:**:text-secondary2 font-semibold max-lg:flex-col"
           >
             <i className="fab text-[25px] fa-instagram"></i>
             <p className="text-[25px] text-center text-balance">
@@ -123,7 +123,7 @@ function Index({}: Props) {
           <a
             target="_blank"
             href="https://www.facebook.com/gsmonteperdido/?locale=es_ES"
-            className="section_redes__div relative after:content-[''] after:w-0 after:absolute after:top-full after:left-0 after:h-1 after:bg-secondary after:rounded-sm after:transition-all after:duration-300 hover:after:w-full no-underline flex items-center gap-2.5 **:transition-all **:duration-300 hover:**:text-secondary2 font-semibold max-md:flex-col"
+            className="section_redes__div relative after:content-[''] after:w-0 after:absolute after:top-full after:left-0 after:h-1 after:bg-secondary after:rounded-sm after:transition-all after:duration-300 hover:after:w-full no-underline flex items-center gap-2.5 **:transition-all **:duration-300 hover:**:text-secondary2 font-semibold max-lg:flex-col max-w-2/3 w-fit"
           >
             <i className="fab text-[25px] fa-facebook"></i>
             <p className="text-[25px] text-center text-balance">

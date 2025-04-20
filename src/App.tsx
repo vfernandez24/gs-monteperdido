@@ -1,9 +1,10 @@
-import Header from "./components/Header";
+import Header from "./components/common/Header";
 import Index from "./routes/Index";
-import Footer from "./components/Footer";
+import Footer from "./components/common/Footer";
 import InfoMonteperdido from "./routes/info/InfoMonteperdido";
 import { HashRouter as BrowserRouter, Routes, Route } from "react-router-dom";
 import InfoPage from "./routes/info/InfoPage";
+import Shop from "./routes/Shop";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           path="/info/kraal"
           element={<InfoPage seccionName="kraal" />}
         ></Route>
+        <Route path="/recuerdos" element={<Shop />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -4,9 +4,11 @@ import { useLocation, Link } from "react-router-dom";
 import images from "../../constants/photosLocation";
 import { sectionsData } from "../../constants/sectionsData";
 
+import sendEmail from "../../scripts/sendEmail";
+
 import grupoBg from "/backgrounds/grupoBg.webp";
-import ArrowButton from "../../components/ArrowButton";
-import SectionTitle from "../../components/SectionTitle";
+import ArrowButton from "../../components/buttons/ArrowButton";
+import SectionTitle from "../../components/common/SectionTitle";
 import ImageSection from "../../components/ImageSection";
 
 const data = {
@@ -149,9 +151,21 @@ function InfoMonteperdido({}: Props) {
 
   const inputClasses = `w-full max-w-[90dvw] block h-10 rounded-[5px] p-3 bg-bg border-[1.5px] border-primary focus:border-primary3 outline-none transition-all ease duration-300`;
   const [typeInputContact, setTypeInputContact] = useState("");
-  const [noError, setNoError] = useState(false);
-  function submitSolicitud() {
-    setNoError;
+
+  const [nombre, setNombre] = useState("");
+  const [fecha, setFecha] = useState("");
+  const [email, setEmail] = useState("");
+  const [tel, setTel] = useState("");
+
+  function formSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const fechaSol = new Date().toLocaleString();
+    const emailBody = `Nombre: ${nombre}
+Fecha de nacimiento: ${fecha}
+Fecha de solicitud: ${fechaSol}
+Contacto: ${typeInputContact == "email" ? email : tel}`;
+    const emailSubject = `Solicitud de ingreso a grupo (${fechaSol})`;
+    sendEmail(emailBody, emailSubject);
   }
 
   return (
@@ -220,12 +234,12 @@ function InfoMonteperdido({}: Props) {
         </div>
       </main>
 
-      <section className="section_historia">
+      {/* <section className="section_historia">
         <SectionTitle color={data.color} inner="nuestra historia" />
         <div className="section_historia__container relative h-[300px]">
           <div className="section_historia__linea w-2 h-full bg-primary rounded-md absolute top-0 left-1/2 -traslate-y-1/2 overflow-visible"></div>
         </div>
-      </section>
+      </section> */}
 
       <section className="section_secciones">
         <SectionTitle color={data.color} inner="nuestras secciones" />
@@ -278,7 +292,7 @@ function InfoMonteperdido({}: Props) {
             </div>
           ))}
         </div>
-        <div className="section_valores__ambientacion__container py-12 w-2/3 flex-col flex-1 flex mx-auto h-fit">
+        <div className="section_valores__ambientacion__container py-12 md:w-2/3 max-md:w-[80vw] flex-col flex-1 flex mx-auto h-fit">
           <div className="section_valores__ambientacion__title py-2 text-2xl font-medium">
             {data.leyes.title}
             {data.leyes.subtitle}
@@ -291,7 +305,7 @@ function InfoMonteperdido({}: Props) {
 
       <section className="section_location">
         <SectionTitle color={data.color} inner="¿Dónde estamos?" />
-        <div className="section_location__container w-full h-[300px] justify-center grid grid-rows-[1fr] grid-cols-[1fr_1fr] px-[15%] gap-10">
+        <div className="section_location__container w-full h-fit justify-center grid md:grid-rows-[1fr] md:grid-cols-[1fr_1fr] max-md:grid-rows-[auto_auto] max-md:grid-cols-[1fr] px-[15%] gap-10">
           <a
             className="cursor-pointer"
             href="https://www.google.es/maps/place/Plaza+de+Toros/@40.2445196,-3.7590858,18.25z/data=!4m10!1m2!2m1!1splaza+de+toro!3m6!1s0xd41f54c150d66ef:0x1648265fa138a377!8m2!3d40.2441!4d-3.75749!15sCg1wbGF6YSBkZSB0b3JvkgEJdHJhbV9zdG9w4AEA!16s%2Fg%2F1tdm9mwd?hl=es&entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D"
@@ -300,7 +314,7 @@ function InfoMonteperdido({}: Props) {
             <img
               src="/gs-monteperdido/assets/Captura-de-pantalla-2025-04-11-161931.webp"
               alt="Mapa del local"
-              className="rounded-lg shadow-[4px_4px_15px_#3e8341]"
+              className="rounded-md shadow-[4px_4px_15px_#3e8341]"
             />
           </a>
           <div className="">
@@ -336,7 +350,7 @@ function InfoMonteperdido({}: Props) {
 
               return mostrar ? (
                 <ImageSection
-                  key={index}
+                  key={img}
                   clickFunction={photo_fullScreen}
                   src={img}
                 />
@@ -407,22 +421,34 @@ function InfoMonteperdido({}: Props) {
       </section>
 
       <section className="section_unete bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(90,200,100,0.2)_0,rgba(90,200,100,0)_50%,rgba(90,200,100,0)_100%)]">
-        <SectionTitle
-          color={data.color}
-          inner={`¿Quieres unirte a grupo?`}
-        />
+        <SectionTitle color={data.color} inner={`¿Quieres unirte a grupo?`} />
         <form
           action=""
           className="lg:w-[600px] max-lg:w-[85%] flex flex-col mx-auto items-center justify-center flex-1"
-          onSubmit={submitSolicitud}
+          onSubmit={formSubmit}
         >
           <label className="w-full h-fit text-left py-4" htmlFor="name">
             Nombre completo del educando:
-            <input type="text" id="name" className={inputClasses} required />
+            <input
+              onChange={(e) => setNombre(e.target.value)}
+              value={nombre}
+              placeholder="Name"
+              type="text"
+              id="name"
+              className={inputClasses}
+              required
+            />
           </label>
           <label className="w-full h-fit text-left py-4" htmlFor="anio">
             Mes y año de nacimiendo del educando:
-            <input type="month" id="anio" className={inputClasses} required />
+            <input
+              onChange={(e) => setFecha(e.target.value)}
+              value={fecha}
+              type="month"
+              id="anio"
+              className={inputClasses}
+              required
+            />
           </label>
           <span className="w-full text-left py-2">
             Tipo de contacto:
@@ -453,7 +479,7 @@ function InfoMonteperdido({}: Props) {
                 className="ml-4"
                 style={{ fontWeight: typeInputContact === "tel" ? 500 : 400 }}
               >
-                Teléfono
+                Usuario de instagram
               </span>
             </label>
           </span>
@@ -461,6 +487,9 @@ function InfoMonteperdido({}: Props) {
             <label className="w-full h-fit text-left py-4" htmlFor="email">
               Correo Electrónico:
               <input
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                placeholder="correo@electronico.com"
                 type="email"
                 id="email"
                 className={inputClasses}
@@ -469,12 +498,18 @@ function InfoMonteperdido({}: Props) {
             </label>
           ) : null}
           {typeInputContact === "tel" ? (
-            <label className="w-full h-fit text-left py-4" htmlFor="tel">
-              Teléfono:
+            <label
+              className="w-full h-fit text-left py-4 relative before:content-['@'] before:w-5 before:h-10 before:flex before:absolute before:bottom-[18px] before:left-3 before:items-center before:justify-center before:text-black before:text-xl before:z-10"
+              htmlFor="tel"
+            >
+              Usuario de instagram:
               <input
-                type="tel"
+                onChange={(e) => setTel(e.target.value)}
+                value={tel}
+                placeholder="username"
+                type="text"
                 id="tel"
-                className={inputClasses}
+                className={`${inputClasses} pl-10 relative before:content-['@']`}
                 required={typeInputContact === "tel" ? true : false}
               />
             </label>
@@ -486,10 +521,7 @@ function InfoMonteperdido({}: Props) {
             Enviar
           </button>
         </form>
-        <p
-          className="items-center justify-center w-full h-fit py-5 text-secondary font-bold text-xl"
-          style={{ opacity: noError == true ? 1 : 0 }}
-        >
+        <p className="items-center justify-center w-full h-fit py-5 text-secondary font-bold text-xl opacity-0">
           Solicitud enviada correctamente
         </p>
       </section>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import handleScroll from "../scroll";
+import handleScroll from "../../scroll";
 
 type Props = {
   ref: React.RefObject<HTMLDivElement | null>;
