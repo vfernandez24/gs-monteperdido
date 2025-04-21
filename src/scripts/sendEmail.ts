@@ -1,6 +1,9 @@
 const sendEmail = async (contenido: string, subject: string) => {
   try {
+    //! Deploy
     const res = await fetch("https://gs-monteperdido.onrender.com/send-email", {
+    //! Dev
+    // const res = await fetch("http://localhost:3001/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -9,15 +12,13 @@ const sendEmail = async (contenido: string, subject: string) => {
     });
 
     const data = await res.json();
-    alert(data.message);
-    if (data.message == "Correo enviado con éxito") {
-      window.location.reload();
-      window.scrollTo(0, 0)
-    }
+    console.log(data.message);
+    return res.ok;
   } catch (error) {
     console.error("Error:", error);
     console.log("Ocurrió un error al enviar el correo");
+    return false;
   }
 };
 
-export default sendEmail
+export default sendEmail;

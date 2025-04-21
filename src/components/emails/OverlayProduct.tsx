@@ -6,9 +6,10 @@ type Props = {
   idProduct: number;
   overlay: boolean;
   setOverlay: React.Dispatch<React.SetStateAction<boolean>>;
+  setAlert: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-function OverlayProduct({ idProduct, overlay, setOverlay }: Props) {
+function OverlayProduct({ idProduct, overlay, setOverlay, setAlert }: Props) {
   const product = products[idProduct];
 
   const [submit, setSubmit] = useState(false);
@@ -18,7 +19,7 @@ function OverlayProduct({ idProduct, overlay, setOverlay }: Props) {
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState("");
 
-  function submitForm(e: React.FormEvent) {
+  async function submitForm(e: React.FormEvent) {
     e.preventDefault();
     setSubmit(true);
     const fecha = new Date().toLocaleString();
@@ -27,14 +28,16 @@ function OverlayProduct({ idProduct, overlay, setOverlay }: Props) {
 Cantidad: ${cantidad}
 Fecha de pedido: ${fecha}
 Contacto: ${contacto == "email" ? email : tel}`;
-    sendEmail(body, subject);
+    const enviado = await sendEmail(body, subject);
+    setOverlay(!enviado)
+    setAlert(enviado)
   }
   return (
     <>
       {overlay == true ? (
         <>
           <div
-            className="overlay fixed top-0 left-0 z-20 flex items-center justify-center w-screen h-screen backdrop-blur-[2px] bg-[#0000003f]"
+            className="overlay fixed top-0 left-0 z-20 flex items-center justify-center w-screen h-screen backdrop-blur-[2px] bg-[#0000003f] cursor-pointer"
             onClick={() => {
               setOverlay(false);
               document.documentElement.style.setProperty("overflow", "auto");
@@ -80,7 +83,6 @@ Contacto: ${contacto == "email" ? email : tel}`;
                 required
                 type="number"
                 value={cantidad}
-                min={1}
                 onChange={(e) => setCantidad(Number(e.target.value))}
                 className="w-full block h-9 rounded-[5px] p-3 bg-bg border-[1.5px] border-primary focus:border-primary3 outline-none transition-all ease duration-300"
               />

@@ -3,6 +3,7 @@ import { useState } from "react";
 import sendEmail from "../scripts/sendEmail";
 import FormAcceso from "../components/emails/FormAcceso";
 import SectionTitle from "../components/common/SectionTitle";
+import Alert from "../components/emails/Alert";
 
 type Props = {};
 
@@ -17,7 +18,9 @@ function Unete({}: Props) {
 
   const [submit, setSubmit] = useState(false);
 
-  function formSubmit(e: React.FormEvent) {
+  const [alert, setAlert] = useState(false);
+
+  async function formSubmit(e: React.FormEvent) {
     e.preventDefault();
     setSubmit(true);
     const fechaSol = new Date().toLocaleString();
@@ -26,34 +29,39 @@ Fecha de nacimiento: ${fecha}
 Fecha de solicitud: ${fechaSol}
 Contacto: ${typeInputContact == "email" ? email : tel}`;
     const emailSubject = `Solicitud de ingreso a grupo (${fechaSol})`;
-    sendEmail(emailBody, emailSubject);
+    const enviado = await sendEmail(emailBody, emailSubject);
+    setAlert(enviado)
   }
   return (
-    <section className="section_unete bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(90,200,100,0.2)_0,rgba(90,200,100,0)_50%,rgba(90,200,100,0)_100%)]">
-      <SectionTitle color="#3e8341" inner={`¿Quieres unirte a grupo?`} />
-      <FormAcceso
-        email={email}
-        fecha={fecha}
-        formSubmit={formSubmit}
-        inputClasses={inputClasses}
-        nombre={nombre}
-        setEmail={setEmail}
-        setFecha={setFecha}
-        setNombre={setNombre}
-        setTel={setTel}
-        setTypeInputContact={setTypeInputContact}
-        tel={tel}
-        typeInputContact={typeInputContact}
-      />
-      <p
-        className="items-center justify-center text-center w-full h-fit py-5 text-secondary font-light text-xl"
-        style={{ opacity: submit == true ? 1 : 0 }}
-      >
-        Cargando solicitud...
-        <br />
-        (Esto puede tardar un par de segundos)
-      </p>
-    </section>
+    <>
+      <Alert type="solicitud" overlay={alert} setOverlay={setAlert} />
+
+      <section className="section_unete bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(90,200,100,0.2)_0,rgba(90,200,100,0)_50%,rgba(90,200,100,0)_100%)]">
+        <SectionTitle color="#3e8341" inner={`¿Quieres unirte a grupo?`} />
+        <FormAcceso
+          email={email}
+          fecha={fecha}
+          formSubmit={formSubmit}
+          inputClasses={inputClasses}
+          nombre={nombre}
+          setEmail={setEmail}
+          setFecha={setFecha}
+          setNombre={setNombre}
+          setTel={setTel}
+          setTypeInputContact={setTypeInputContact}
+          tel={tel}
+          typeInputContact={typeInputContact}
+        />
+        <p
+          className="items-center justify-center text-center w-full h-fit py-5 text-secondary font-light text-xl"
+          style={{ opacity: submit == true ? 1 : 0 }}
+        >
+          Cargando solicitud...
+          <br />
+          (Esto puede tardar un par de segundos)
+        </p>
+      </section>
+    </>
   );
 }
 

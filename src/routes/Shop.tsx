@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Product from "../components/cards/Product";
 import products from "../constants/products";
 import OverlayProduct from "../components/emails/OverlayProduct";
+import Alert from "../components/emails/Alert";
 
 type Props = {};
 
@@ -14,12 +15,17 @@ function Shop({}: Props) {
   const [idProduct, setIdProduct] = useState(0);
   const [overlay, setOverlay] = useState(false);
 
+  const [alert, setAlert] = useState(false);
+
   return (
     <>
+      <Alert type="solicitud" overlay={alert} setOverlay={setAlert} />
+
       <OverlayProduct
         idProduct={idProduct}
         overlay={overlay}
         setOverlay={setOverlay}
+        setAlert={setAlert}
       />
 
       <section className="section_hero pt-16">

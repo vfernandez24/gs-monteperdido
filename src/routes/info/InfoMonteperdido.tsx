@@ -15,6 +15,7 @@ import ArrowButton from "../../components/buttons/ArrowButton";
 import SectionTitle from "../../components/common/SectionTitle";
 import ImageSection from "../../components/ImageSection";
 import FormAcceso from "../../components/emails/FormAcceso";
+import Alert from "../../components/emails/Alert";
 
 const data = {
   section_hero__title: (
@@ -164,7 +165,7 @@ function InfoMonteperdido({}: Props) {
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState("");
 
-  function formSubmit(e: React.FormEvent) {
+  async function formSubmit(e: React.FormEvent) {
     e.preventDefault();
     setSubmit(true);
     const fechaSol = new Date().toLocaleString();
@@ -173,11 +174,16 @@ Fecha de nacimiento: ${fecha}
 Fecha de solicitud: ${fechaSol}
 Contacto: ${typeInputContact == "email" ? email : tel}`;
     const emailSubject = `Solicitud de ingreso a grupo (${fechaSol})`;
-    sendEmail(emailBody, emailSubject);
+    const enviado = await sendEmail(emailBody, emailSubject);
+    setAlert(enviado)
   }
+
+  const [alert, setAlert] = useState(false);
 
   return (
     <>
+      <Alert type="solicitud" overlay={alert} setOverlay={setAlert} />
+
       <div
         className="overlay w-screen h-screen top-0 left-0 fixed z-50 bg-[#00000033] backdrop-blur-[2px] cursor-pointer items-center justify-center"
         style={{ display: showModal == true ? "flex" : "none" }}

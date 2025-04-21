@@ -5,6 +5,7 @@ import ActivityCard from "../components/cards/ActivityCard";
 import Product from "../components/cards/Product";
 import ArrowButton from "../components/buttons/ArrowButton";
 import OverlayProduct from "../components/emails/OverlayProduct";
+import Alert from "../components/emails/Alert";
 
 import products from "../constants/products";
 import activities from "../constants/activities";
@@ -22,12 +23,17 @@ function Index({}: Props) {
   const [idProduct, setIdProduct] = useState(0);
   const [overlay, setOverlay] = useState(false);
 
+  const [alert, setAlert] = useState(false);
+
   return (
     <>
+      <Alert type="pedido" overlay={alert} setOverlay={setAlert} />
+
       <OverlayProduct
         idProduct={idProduct}
         overlay={overlay}
         setOverlay={setOverlay}
+        setAlert={setAlert}
       />
 
       <section className="section_inicio min-h-fit pt-[90px] h-[calc(100vh-90px)] relative w-full flex justify-center items-center flex-col max-md:bg-[url('/backgrounds/formacionV.webp')] md:bg-[url('/backgrounds/formacionH.webp')] bg-cover bg-center bg-fixed">
