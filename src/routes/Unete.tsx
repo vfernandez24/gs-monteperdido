@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import sendEmail from "../scripts/sendEmail";
-import FormAcceso from "../components/FormAcceso";
+import FormAcceso from "../components/emails/FormAcceso";
 import SectionTitle from "../components/common/SectionTitle";
 
 type Props = {};

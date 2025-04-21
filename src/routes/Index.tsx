@@ -1,9 +1,10 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import ActivityCard from "../components/cards/ActivityCard";
 import Product from "../components/cards/Product";
 import ArrowButton from "../components/buttons/ArrowButton";
+import OverlayProduct from "../components/emails/OverlayProduct";
 
 import products from "../constants/products";
 import activities from "../constants/activities";
@@ -17,8 +18,18 @@ function Index({}: Props) {
     document.title = "GS Monteperdido 960 | Grupo Scout de Parla, Madrid";
   }, []);
 
+  const idProducts = [0, 1, 2];
+  const [idProduct, setIdProduct] = useState(0);
+  const [overlay, setOverlay] = useState(false);
+
   return (
     <>
+      <OverlayProduct
+        idProduct={idProduct}
+        overlay={overlay}
+        setOverlay={setOverlay}
+      />
+
       <section className="section_inicio min-h-fit pt-[90px] h-[calc(100vh-90px)] relative w-full flex justify-center items-center flex-col max-md:bg-[url('/backgrounds/formacionV.webp')] md:bg-[url('/backgrounds/formacionH.webp')] bg-cover bg-center bg-fixed">
         <h1 className="text-[50px] text-primary3 font-bold text-center relative z-[2] text-balance max-lg:text-[40px]">
           Bienvenidos al Grupo Scout Monteperdido 960
@@ -148,14 +159,23 @@ function Index({}: Props) {
           Recuerdos scouts
         </h2>
         <div className="section_tienda__container flex flex-wrap items-center justify-evenly w-full px-10 gap-x-10 gap-y-10">
-          {products.map((pro, index) => (
-            <Product
-              key={index}
-              srcImg={pro.srcImg}
-              subTitle={pro.subtitle}
-              title={pro.title}
-            />
-          ))}
+          {products.map((pro, index) => {
+            for (let i = 0; i < idProducts.length; i++) {
+              if (pro.id == idProducts[i]) {
+                return (
+                  <Product
+                    key={index}
+                    srcImg={pro.srcImg}
+                    subTitle={pro.subtitle}
+                    title={pro.title}
+                    id={pro.id}
+                    setIdProduct={setIdProduct}
+                    setOverlay={setOverlay}
+                  />
+                );
+              }
+            }
+          })}
         </div>
         <Link
           to="/recuerdos"

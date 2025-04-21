@@ -14,7 +14,7 @@ import grupoBg from "/backgrounds/grupoBg.webp";
 import ArrowButton from "../../components/buttons/ArrowButton";
 import SectionTitle from "../../components/common/SectionTitle";
 import ImageSection from "../../components/ImageSection";
-import FormAcceso from "../../components/FormAcceso";
+import FormAcceso from "../../components/emails/FormAcceso";
 
 const data = {
   section_hero__title: (
@@ -157,6 +157,8 @@ function InfoMonteperdido({}: Props) {
   const inputClasses = `w-full max-w-[90dvw] block h-10 rounded-[5px] p-3 bg-bg border-[1.5px] border-primary focus:border-primary3 outline-none transition-all ease duration-300`;
   const [typeInputContact, setTypeInputContact] = useState("");
 
+  const [submit, setSubmit] = useState(false);
+
   const [nombre, setNombre] = useState("");
   const [fecha, setFecha] = useState("");
   const [email, setEmail] = useState("");
@@ -164,6 +166,7 @@ function InfoMonteperdido({}: Props) {
 
   function formSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setSubmit(true);
     const fechaSol = new Date().toLocaleString();
     const emailBody = `Nombre: ${nombre}
 Fecha de nacimiento: ${fecha}
@@ -441,8 +444,13 @@ Contacto: ${typeInputContact == "email" ? email : tel}`;
           tel={tel}
           typeInputContact={typeInputContact}
         />
-        <p className="items-center justify-center w-full h-fit py-5 text-secondary font-bold text-xl opacity-0">
-          Solicitud enviada correctamente
+        <p
+          className="items-center justify-center text-center w-full h-fit py-5 text-secondary font-light text-xl"
+          style={{ opacity: submit == true ? 1 : 0 }}
+        >
+          Cargando solicitud...
+          <br />
+          (Esto puede tardar un par de segundos)
         </p>
       </section>
     </>

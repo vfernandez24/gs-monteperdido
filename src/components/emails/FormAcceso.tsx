@@ -107,7 +107,7 @@ function FormAcceso({
       ) : null}
       {typeInputContact === "tel" ? (
         <label
-          className="w-full h-fit text-left py-4 relative before:content-['@'] before:w-5 before:h-10 before:flex before:absolute before:bottom-[18px] before:left-3 before:items-center before:justify-center before:text-black before:text-xl before:z-10"
+          className="w-full h-fit text-left py-4 relative before:content-['@'] before:w-5 before:h-10 before:flex before:absolute before:bottom-[16px] before:left-3 before:items-center before:justify-center before:text-gray-500 before:text-lg before:z-10"
           htmlFor="tel"
         >
           Usuario de instagram:

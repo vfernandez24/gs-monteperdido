@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Product from "../components/cards/Product";
 import products from "../constants/products";
+import OverlayProduct from "../components/emails/OverlayProduct";
 
 type Props = {};
 
@@ -10,8 +11,17 @@ function Shop({}: Props) {
     document.title = `Recuerdos Scout | GS Monteperdido 960 Parla`;
   }, [location.pathname]);
 
+  const [idProduct, setIdProduct] = useState(0);
+  const [overlay, setOverlay] = useState(false);
+
   return (
     <>
+      <OverlayProduct
+        idProduct={idProduct}
+        overlay={overlay}
+        setOverlay={setOverlay}
+      />
+
       <section className="section_hero pt-16">
         <div className="w-full h-fit pb-5 flex justify-center text-5xl items-center text-primary">
           <img
@@ -125,6 +135,9 @@ function Shop({}: Props) {
             srcImg={pro.srcImg}
             subTitle={pro.subtitle}
             title={pro.title}
+            id={pro.id}
+            setIdProduct={setIdProduct}
+            setOverlay={setOverlay}
           />
         ))}
       </section>
