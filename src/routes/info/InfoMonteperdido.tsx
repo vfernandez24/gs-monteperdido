@@ -175,14 +175,16 @@ Fecha de solicitud: ${fechaSol}
 Contacto: ${typeInputContact == "email" ? email : tel}`;
     const emailSubject = `Solicitud de ingreso a grupo (${fechaSol})`;
     const enviado = await sendEmail(emailBody, emailSubject);
-    setAlert(enviado)
+    setAlert(true);
+    setEnviado(enviado);
   }
 
   const [alert, setAlert] = useState(false);
+  const [enviado, setEnviado] = useState(false)
 
   return (
     <>
-      <Alert type="solicitud" overlay={alert} setOverlay={setAlert} />
+      <Alert type={enviado == true ? "contacto" : "error"} overlay={alert} setOverlay={setAlert} />
 
       <div
         className="overlay w-screen h-screen top-0 left-0 fixed z-50 bg-[#00000033] backdrop-blur-[2px] cursor-pointer items-center justify-center"

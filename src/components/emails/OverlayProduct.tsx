@@ -7,9 +7,10 @@ type Props = {
   overlay: boolean;
   setOverlay: React.Dispatch<React.SetStateAction<boolean>>;
   setAlert: React.Dispatch<React.SetStateAction<boolean>>;
+  setEnviado: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-function OverlayProduct({ idProduct, overlay, setOverlay, setAlert }: Props) {
+function OverlayProduct({ idProduct, overlay, setOverlay, setAlert, setEnviado }: Props) {
   const product = products[idProduct];
 
   const [submit, setSubmit] = useState(false);
@@ -29,8 +30,9 @@ Cantidad: ${cantidad}
 Fecha de pedido: ${fecha}
 Contacto: ${contacto == "email" ? email : tel}`;
     const enviado = await sendEmail(body, subject);
-    setOverlay(!enviado)
-    setAlert(enviado)
+    setAlert(true);
+    setEnviado(enviado);
+    setOverlay(!enviado);
   }
   return (
     <>

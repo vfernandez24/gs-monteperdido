@@ -1,5 +1,5 @@
 type Props = {
-  type: "pedido" | "solicitud";
+  type: "pedido" | "solicitud" | "contacto" | "error";
   overlay: boolean;
   setOverlay: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -27,7 +27,16 @@ function Alert({ type, overlay, setOverlay }: Props) {
             <h2 className="text-xl font-bold uppercase text-primary text-center w-full tracking-[2px] text-balance">
               {type == "pedido"
                 ? "Pedido realizado correctamente"
-                : "Solicitud realizada correctamente"}
+                : ""}
+              {type == "contacto"
+                ? "Correo enviado correctamente"
+                : ""}
+              {type == "pedido"
+                ? "Solicitud realizada correctamente"
+                : ""}
+              {type == "error"
+                ? "Ocurrió un error al enviar el correo"
+                : ""}
             </h2>
             <button
               onClick={clickFunction}

@@ -19,6 +19,7 @@ function Unete({}: Props) {
   const [submit, setSubmit] = useState(false);
 
   const [alert, setAlert] = useState(false);
+  const [enviado, setEnviado] = useState(false)
 
   async function formSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -30,11 +31,12 @@ Fecha de solicitud: ${fechaSol}
 Contacto: ${typeInputContact == "email" ? email : tel}`;
     const emailSubject = `Solicitud de ingreso a grupo (${fechaSol})`;
     const enviado = await sendEmail(emailBody, emailSubject);
-    setAlert(enviado)
+    setAlert(true);
+    setEnviado(enviado);
   }
   return (
     <>
-      <Alert type="solicitud" overlay={alert} setOverlay={setAlert} />
+      <Alert type={enviado == true ? "contacto" : "error"} overlay={alert} setOverlay={setAlert} />
 
       <section className="section_unete bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(90,200,100,0.2)_0,rgba(90,200,100,0)_50%,rgba(90,200,100,0)_100%)]">
         <SectionTitle color="#3e8341" inner={`¿Quieres unirte a grupo?`} />
