@@ -142,14 +142,6 @@ export const sectionsData: Record<
           foto: "",
           nombre: "Maripaz",
         },
-        {
-          foto: "",
-          nombre: "Felipe",
-        },
-        {
-          foto: "",
-          nombre: "",
-        },
       ],
     },
     valores: [
