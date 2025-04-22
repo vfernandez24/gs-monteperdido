@@ -113,12 +113,6 @@ function Index({}: Props) {
             />
           ))}
         </div>
-        <Link
-          to="/actividades"
-          className="section_verMas text-center text-xl font-bold no-underline text-secondary2 transition-all duration-[0.3s] ease-[ease] hover:text-secondary flex items-center justify-center w-fit mx-auto h-fit mt-10 relative after:content-[''] after:w-0 after:absolute after:top-full after:left-0 after:h-[3px] after:bg-secondary after:rounded-sm after:transition-all after:duration-300 hover:after:w-full **:transition-all **:duration-300 hover:**:text-secondary"
-        >
-          Más actividades
-        </Link>
       </section>
 
       <section className="section_redes min-h-fit py-[90px] bg-[radial-gradient(#ebebeb_1px,transparent_1px)] [background-size:16px_16px]">

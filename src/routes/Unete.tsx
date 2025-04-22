@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import sendEmail from "../scripts/sendEmail";
 import FormAcceso from "../components/emails/FormAcceso";
@@ -8,6 +8,11 @@ import Alert from "../components/emails/Alert";
 type Props = {};
 
 function Unete({}: Props) {
+  useEffect(() => {
+      window.scrollTo(0, 0);
+      document.title = `Únete a nosotros | GS Monteperdido 960 Parla`;
+    }, [location.pathname]);
+
   const inputClasses = `w-full max-w-[90dvw] block h-10 rounded-[5px] p-3 bg-bg border-[1.5px] border-primary focus:border-primary3 outline-none transition-all ease duration-300`;
   const [typeInputContact, setTypeInputContact] = useState("");
 

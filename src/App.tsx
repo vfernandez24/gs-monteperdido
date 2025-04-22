@@ -7,6 +7,7 @@ import InfoPage from "./routes/info/InfoPage";
 import Shop from "./routes/Shop";
 import Contacto from "./routes/Contacto";
 import Unete from "./routes/Unete";
+import Redes from "./routes/Redes";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           element={<InfoPage seccionName="kraal" />}
         ></Route>
         <Route path="/recuerdos" element={<Shop />}></Route>
+        <Route path="/redes" element={<Redes />}></Route>
         <Route path="/contacto" element={<Contacto />}></Route>
         <Route path="/unete" element={<Unete />}></Route>
       </Routes>

@@ -132,7 +132,3 @@
 .section_valores__valor:hover {
   scale: 1.05;
 }
-
-.section_scouters__moni__img:hover img {
-  scale: 1.02;
-}

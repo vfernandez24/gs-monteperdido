@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import sendEmail from "../scripts/sendEmail";
 import SectionTitle from "../components/common/SectionTitle";
@@ -7,6 +7,11 @@ import Alert from "../components/emails/Alert";
 type Props = {};
 
 function Contacto({}: Props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = `Contacta con nosotros | GS Monteperdido 960 Parla`;
+  }, [location.pathname]);
+
   const inputClasses = `w-full max-w-[90dvw] block h-10 rounded-[5px] p-3 bg-bg border-[1.5px] border-primary focus:border-primary3 outline-none transition-all ease duration-300`;
   const [typeInputContact, setTypeInputContact] = useState("email");
 
@@ -19,7 +24,7 @@ function Contacto({}: Props) {
   const [submit, setSubmit] = useState(false);
 
   const [alert, setAlert] = useState(false);
-  const [enviado, setEnviado] = useState(false)
+  const [enviado, setEnviado] = useState(false);
 
   async function formSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -36,7 +41,11 @@ ${body}`;
   }
   return (
     <>
-      <Alert type={enviado == true ? "contacto" : "error"} overlay={alert} setOverlay={setAlert} />
+      <Alert
+        type={enviado == true ? "contacto" : "error"}
+        overlay={alert}
+        setOverlay={setAlert}
+      />
 
       <section className="section_unete bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(90,200,100,0.2)_0,rgba(90,200,100,0)_50%,rgba(90,200,100,0)_100%)]">
         <SectionTitle color="#3e8341" inner={`Contacta con nosotros`} />

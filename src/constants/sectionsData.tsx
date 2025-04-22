@@ -140,7 +140,7 @@ export const sectionsData: Record<
         },
         {
           foto: "",
-          nombre: "",
+          nombre: "Maripaz",
         },
         {
           foto: "",

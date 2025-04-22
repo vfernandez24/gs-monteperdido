@@ -282,11 +282,11 @@ Contacto: ${typeInputContact == "email" ? email : tel}`;
               key={index}
               className="section_scouters__moni h-[300px] w-[220px] grid grid-rows-[auto_1fr]"
             >
-              <div className="section_scouters__moni__img overflow-hidden h-[220px] flex items-center justify-center">
+              <div className="section_scouters__moni__img overflow-hidden hover:*:scale-[1.1] w-fit py-5 h-[220px] flex items-center justify-center justify-self-center">
                 <img
                   src={moni.foto}
                   alt={`Foto de ${moni.nombre2 ? moni.nombre2 : moni.nombre}`}
-                  className="object-contain h-4/5 w-4/5 bg-green-300 transition-all duration-300 ease"
+                  className="object-contain h-full w-full bg-green-300 transition-all duration-300 ease"
                 />
               </div>
               <div className="section_scouters__moni__name relative flex items-center justify-center">
