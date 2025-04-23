@@ -81,7 +81,7 @@ function Index({}: Props) {
           </div>
           <div className="section_info__div flex flex-col justify-center items-stretch">
             <img
-              src="/gs-monteperdido/assets/collageInfo.webp"
+              src="/assets/collageInfo.webp"
               alt="Collage de imágenes de actividades scouts"
               className="max-h-[none] object-cover self-stretch rounded-md lg:h-[348px] sm:h-[400px] md:h-[320px] "
             />
@@ -153,7 +153,7 @@ function Index({}: Props) {
       <section className="section_tienda min-h-fit py-[90px]">
         <div className="w-full h-fit pb-5 flex justify-center text-5xl items-center text-primary">
           <img
-            src="/gs-monteperdido/icons/florDeLis.webp"
+            src="/icons/florDeLis.webp"
             className="h-[48px]"
           />
         </div>
