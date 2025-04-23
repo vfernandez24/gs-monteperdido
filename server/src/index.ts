@@ -7,7 +7,8 @@ const PORT = process.env.PORT || 3001;
 
 app.use(
   cors({
-    origin: "incomparable-kelpie-ba6430.netlify.app",
+    origin: "*",
+    // origin: "incomparable-kelpie-ba6430.netlify.app",
     // origin: "https://vfernandez24.github.io",
     // origin: "http://localhost:5173",
     credentials: true,
