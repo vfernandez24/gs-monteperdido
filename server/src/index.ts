@@ -29,8 +29,8 @@ app.post("/send-email", async (req, res) => {
 
   const mailOptions = {
     from: "webgsmonteperdido@gmail.com",
-    // to: "infomonteperdido@gmail.com",
-    to: "germanfernandezblanco@gmail.com",
+    to: "infomonteperdido@gmail.com",
+    // to: "germanfernandezblanco@gmail.com",
     subject: subject,
     text: contenido,
   };
