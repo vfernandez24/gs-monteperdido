@@ -1,7 +1,7 @@
 const sendEmail = async (contenido: string, subject: string) => {
   try {
     //! Deploy
-    const res = await fetch("https://gs-monteperdido.onrender.com/send-email", {
+    const res = await fetch("https://gs-monteperdido-ofjz.onrender.com/send-email", {
       //! Dev
       // const res = await fetch("http://localhost:3001/send-email", {
       method: "POST",
